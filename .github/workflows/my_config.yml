@@ -1,0 +1,18 @@
+name: Great Learning Action
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ $default-branch ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/python@v2
+        with:
+          python-version: 3.9.7
+      - uses: actions/checkout@v4
+      - run: pip install -r requirements.txt
